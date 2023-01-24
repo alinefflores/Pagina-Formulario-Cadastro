@@ -31,50 +31,65 @@
     <main class="principal">
         <h2 class="principal__titulo">Dados do cadastro</h2>
 
-        <form class="principal__formulario" id="formulario" target="_blank"
-            onsubmit="location.replace('./cadastro-finalizado.html')">
-
+        <form action="./cadastro-finalizado.html" class="principal__formulario formulario" id="formulario" target="_blank">
             <h3 class="principal__subtitulo">Dados pessoais</h3>
 
             <div class="formulario__campo">
                 <label class="campo__etiqueta" for="nome">Nome Completo</label>
-                <input name="nome" id="nome" class="campo__escrita" required />
+                <input name="nome" id="nome" minlength="3" class="campo__escrita validar"/>
             </div>
 
             <div class="formulario__dupla">
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="nascimento">Nascimento</label>
-                    <input name="nascimento" id="nascimento" type="date" class="campo__escrita" required />
+                    <input name="nascimento" id="nascimento" type="date" class="campo__escrita validar"/>
                 </div>
 
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="telefone">Contato</label>
-                    <input name="telefone" id="telefone" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita" required />
+                    <input name="telefone" id="telefone" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita validar" />
                 </div>
             </div>
 
             <div class="formulario__campo">
                 <label class="campo__etiqueta" for="email">E-mail</label>
-                <input name="email" id="email" type="email" class="campo__escrita" required/>
+                <input name="email" id="email" type="email" class="campo__escrita validar"/>
+            </div>
+
+            <div class="formulario__campo">
+                <label class="campo__etiqueta" for="iusuario">Usuário</label>
+                <input type="text" name="usuario" id="isuario" class="campo__escrita validar usuario"/>
+            </div>
+
+            <div class="formulario__dupla">
+                <div class="formulario__campo">
+                    <label class="campo__etiqueta" for="isenha">Senha</label>
+                    <input name="senha" id="isenha" type="password" class="campo__escrita senha validar"/>
+                </div>
+
+                <div class="formulario__campo">
+                    <label class="campo__etiqueta" for="irepetir-senha">Confirmar Senha</label>
+                    <input name="repetir-senha" id="irepetir-senha" type="password" class="campo__escrita validar repetir-senha"/>
+                </div>
             </div>
 
             <h3 class="principal__subtitulo">Endereço</h3>
 
             <div class="formulario__campo">
                 <label class="campo__etiqueta" for="cep">CEP</label>
-                <input name="cep" id="cep" class="campo__escrita" required />
+                <input name="cep" id="cep" class="campo__escrita validar"/>
                 <div id="erro"></div>
             </div>
 
             <div class="formulario__campo">
                 <label class="campo__etiqueta" for="endereco">Endereço</label>
-                <input name="endereco" id="endereco" class="campo__escrita" required/>
+                <input name="endereco" id="endereco" class="campo__escrita validar"/>
             </div>
 
             <div class="formulario__dupla">
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="numero">Número</label>
-                    <input name="numero" id="numero" class="campo__escrita" required/>
+                    <input name="numero" id="numero" class="campo__escrita validar"/>
                 </div>
 
                 <div class="formulario__campo">
@@ -85,18 +100,18 @@
 
             <div class="formulario__campo">
                 <label class="campo__etiqueta" for="bairro">Bairro</label>
-                <input name="bairro" id="bairro" class="campo__escrita" required />
+                <input name="bairro" id="bairro" class="campo__escrita validar"/>
             </div>
 
             <div class="formulario__dupla">
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="cidade">Cidade</label>
-                    <input name="cidade" id="cidade" class="campo__escrita" required />
+                    <input name="cidade" id="cidade" class="campo__escrita validar"/>
                 </div>
 
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="estado">UF</label>
-                    <select id="estado" name="estado" class="campo__escrita">
+                    <select id="estado" name="estado" class="campo__escrita validar">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -129,8 +144,10 @@
                 </div>
             </div>
 
-            <input type="submit" value="Enviar formulário" class="formulario__botao" id="enviar">
-
+            <div> 
+                <input type="submit" value="Enviar formulário" class="formulario__botao" id="enviar">
+                <input type="submit" value="Limpar" class="formulario__botao" id="limpar">
+            </div>    
         </form>
     </main>
 
@@ -140,6 +157,7 @@
     </footer>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/CEP.js"></script>
    
 </body>
 </html>

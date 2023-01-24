@@ -99,9 +99,9 @@ body {
 }
 
 .formulario__botao {
-    background: var(--laranja);
+    background: var(--azul);
     padding: 0.5em 2em;
-    margin-top: 1em;
+    margin: 1em 1em 1em auto;
     font-weight: 700;
     font-size: 16px;
     line-height: 30px;
@@ -127,6 +127,12 @@ body {
 }
 
 .erro__texto {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--vermelho);
+}
+
+#erro {
     font-size: 12px;
     line-height: 18px;
     color: var(--vermelho);
