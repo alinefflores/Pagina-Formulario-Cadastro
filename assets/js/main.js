@@ -17,8 +17,8 @@ class ValidaFormulario {
         const senhasValidas = this.senhasValidadas();
 
         if(camposValidos && senhasValidas){
-            this.fomulario.submit();            
-        }
+            this.fomulario.submit();                        
+        }  
     }
 
     senhasValidadas(){
